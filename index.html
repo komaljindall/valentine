@@ -16,14 +16,9 @@
       max-width: 700px;
       margin: auto;
     }
-    h1 {
-      font-size: 40px;
-      margin-bottom: 10px;
-    }
-    p {
-      font-size: 18px;
-      line-height: 1.8;
-    }
+    h1 { font-size: 40px; }
+    p { font-size: 18px; line-height: 1.8; }
+
     .heart {
       font-size: 50px;
       animation: beat 1s infinite;
@@ -32,55 +27,60 @@
       0%,100% { transform: scale(1); }
       50% { transform: scale(1.2); }
     }
+
     button {
-      margin-top: 30px;
-      padding: 15px 30px;
+      margin-top: 20px;
+      padding: 14px 28px;
       font-size: 18px;
       border: none;
-      background: #ff4d6d;
-      color: white;
       border-radius: 30px;
       cursor: pointer;
     }
-    .hidden {
+
+    .yes {
+      background: #ff4d6d;
+      color: white;
+      margin-right: 15px;
+    }
+
+    .no {
+      background: #ccc;
+      color: #333;
+      position: relative;
+    }
+
+    #love, #question {
       display: none;
       margin-top: 30px;
     }
   </style>
 </head>
-<body>
 
+<body>
   <div class="container">
     <div class="heart">❤️</div>
-    <h1>Hey You</h1>
+    <h1>Hey Love ❤️</h1>
 
     <p>
-      I don’t know how to say this in person without smiling like an idiot…  
-      but you make my days lighter, my heart calmer, and my life better.
+      I don’t know how to say this in person without smiling…
+      so I made this instead.
     </p>
 
-    <p>
-      Every little moment with you matters to me more than you know.
-    </p>
+    <button onclick="playStory()">Click if you feel the same 🥹</button>
 
-    <button onclick="showLove()">Click if you feel the same 🥹</button>
+    <div id="love">
+      <p id="line1"></p>
+      <p id="line2"></p>
+      <p id="line3"></p>
+    </div>
 
-    <div id="love" class="hidden">
+    <div id="question">
       <h2>Will you be my Valentine? 💌</h2>
-      <p>
-        No pressure. Just my heart asking yours.
-      </p>
-      <p>
-        — Yours, always ❤️
-      </p>
+      <button class="yes" onclick="goNext()">YES ❤️</button>
+      <button class="no" id="noBtn">NO 🙈</button>
     </div>
   </div>
 
   <script>
-    function showLove() {
-      document.getElementById("love").style.display = "block";
-    }
-  </script>
-
-</body>
-</html>
+    function playStory() {
+      document.getElementByI
