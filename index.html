@@ -68,29 +68,48 @@
     <button class="yes" onclick="goYes()">YES ❤️</button>
     <button class="no" id="noBtn">NO 🙈</button>
   </div>
+  
+<audio id="piano" loop>
+  <source src="https://cdn.pixabay.com/audio/2022/10/30/audio_8b9b3b7d7e.mp3" type="audio/mpeg">
+</audio>
 
 <script>
+  function speak(text) {
+    const msg = new SpeechSynthesisUtterance(text);
+    msg.lang = "en-US";
+    msg.rate = 0.9;
+    msg.pitch = 1.1;
+    window.speechSynthesis.speak(msg);
+  }
+
   function startStory() {
+    // 🎹 piano start
+    document.getElementById("piano").play();
+
     document.getElementById("story").style.display = "block";
 
     setTimeout(() => {
-      document.getElementById("s1").innerText =
-        "It started with small conversations…";
+      const t1 = "It started with small conversations…";
+      document.getElementById("s1").innerText = t1;
+      speak(t1);
     }, 500);
 
     setTimeout(() => {
-      document.getElementById("s2").innerText =
-        "Somehow, you became my favourite part of the day.";
-    }, 2000);
+      const t2 = "Somehow, you became my favourite part of the day.";
+      document.getElementById("s2").innerText = t2;
+      speak(t2);
+    }, 3000);
 
     setTimeout(() => {
-      document.getElementById("s3").innerText =
-        "So I just wanted to ask you something…";
-    }, 3500);
+      const t3 = "So I just wanted to ask you something important…";
+      document.getElementById("s3").innerText = t3;
+      speak(t3);
+    }, 6000);
 
     setTimeout(() => {
       document.getElementById("question").style.display = "block";
-    }, 5000);
+      speak("Will you be my Valentine?");
+    }, 9000);
   }
 
   const noBtn = document.getElementById("noBtn");
