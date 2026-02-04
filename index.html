@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For You ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Georgia', serif;
+      background: linear-gradient(to bottom, #ffd6e0, #fff);
+      text-align: center;
+      color: #5a2a2a;
+    }
+    .container {
+      padding: 40px 20px;
+      max-width: 700px;
+      margin: auto;
+    }
+    h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 18px;
+      line-height: 1.8;
+    }
+    .heart {
+      font-size: 50px;
+      animation: beat 1s infinite;
+    }
+    @keyframes beat {
+      0%,100% { transform: scale(1); }
+      50% { transform: scale(1.2); }
+    }
+    button {
+      margin-top: 30px;
+      padding: 15px 30px;
+      font-size: 18px;
+      border: none;
+      background: #ff4d6d;
+      color: white;
+      border-radius: 30px;
+      cursor: pointer;
+    }
+    .hidden {
+      display: none;
+      margin-top: 30px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="heart">❤️</div>
+    <h1>Hey You</h1>
+
+    <p>
+      I don’t know how to say this in person without smiling like an idiot…  
+      but you make my days lighter, my heart calmer, and my life better.
+    </p>
+
+    <p>
+      Every little moment with you matters to me more than you know.
+    </p>
+
+    <button onclick="showLove()">Click if you feel the same 🥹</button>
+
+    <div id="love" class="hidden">
+      <h2>Will you be my Valentine? 💌</h2>
+      <p>
+        No pressure. Just my heart asking yours.
+      </p>
+      <p>
+        — Yours, always ❤️
+      </p>
+    </div>
+  </div>
+
+  <script>
+    function showLove() {
+      document.getElementById("love").style.display = "block";
+    }
+  </script>
+
+</body>
+</html>
